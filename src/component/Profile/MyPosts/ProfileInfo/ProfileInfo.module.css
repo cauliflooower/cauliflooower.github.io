@@ -1,0 +1,60 @@
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.ProfileBG{
+    height: 230px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    background-image: url(https://images.unsplash.com/photo-1446729444801-31245ddba81a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.ProfileAva{
+    position: absolute;
+    top: 24%;
+    right: 20%;
+    z-index: 1;
+    height: 11rem;
+    width: 11rem;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    background-image: url(https://i.pinimg.com/originals/3f/4b/30/3f4b309774b38cef7ed79bbfc264dc99.jpg);
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+
+
+.windowPost{
+    border: 0;
+    border-radius: 20px;
+    width: 100%;
+    height: 4.5rem;
+    background-color:rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    color:#ffffff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(241, 241, 241, 0.1),
+    4px 4px 5px 0px rgba(250, 250, 250, 0.1);
+}
+
+
+.windowPost::placeholder {color: rgba(241, 241, 241, 0.1);}
+
+.titleQuestion{
+    font-size: 1.1rem;
+    color:#ffffff;
+    font-weight: 300;
+}
+
+.addPost{
+    position: absolute;
+    right: 6%;
+    top: 61%;
+}
+
