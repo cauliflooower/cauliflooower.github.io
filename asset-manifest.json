@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/start-of-react-projects/static/css/main.f199d950.css",
+    "main.js": "/start-of-react-projects/static/js/main.404e96c8.js",
+    "static/js/787.59ad21da.chunk.js": "/start-of-react-projects/static/js/787.59ad21da.chunk.js",
+    "index.html": "/start-of-react-projects/index.html",
+    "static/media/crystal-precious-stone-diamond-jewelry-gem-pentagon-gemstone-svgrepo-com.svg": "/start-of-react-projects/static/media/crystal-precious-stone-diamond-jewelry-gem-pentagon-gemstone-svgrepo-com.583194ed56d93a2e6cd7.svg",
+    "main.f199d950.css.map": "/start-of-react-projects/static/css/main.f199d950.css.map",
+    "main.404e96c8.js.map": "/start-of-react-projects/static/js/main.404e96c8.js.map",
+    "787.59ad21da.chunk.js.map": "/start-of-react-projects/static/js/787.59ad21da.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f199d950.css",
+    "static/js/main.404e96c8.js"
+  ]
+}
