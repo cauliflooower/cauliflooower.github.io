@@ -1,15 +1,11 @@
 import classes from './MyPosts.module.css'
 import Post from './Post'
 
-let postData = [
-    {id:1, message:'Hi, how are you?', likesCount: 0},
-    {id:2, message:"It's my first post", likesCount: 23},
-]
+function MyPosts(props) {
+    
+    let postsElements = 
+    props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
 
-let postsElements = 
-    postData.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
-
-function MyPosts() {
     return (
         <div className={classes.postsBlock}>
             <div className={classes.contentPosition}>
