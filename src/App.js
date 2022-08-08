@@ -1,4 +1,5 @@
 import './App.css';
+import state from './redux/state';
 import Dialogs from './component/Dialogs/Dialogs';
 import Header from './component/Header/Header';
 import Navbar from './component/Navbar/Navbar';
@@ -14,8 +15,11 @@ function App(props) {
           <Navbar />
           <div className='app-wrapper-content'>
             <Routes>
-              <Route path='/message' element={<Dialogs dialogs={props.state.dialogs} messages={props.state.messages}/>} />
-              <Route path='/profile' element={<Profile posts={props.state.posts}/>} />
+              <Route path='/message' element={<Dialogs
+              state={props.state.dialogsPage}/>}/>
+              <Route path='/profile' element={<Profile 
+              state={props.state.profilePage}
+              dispatch={props.dispatch}/>}/>
             </Routes>
           </div>
         </div>

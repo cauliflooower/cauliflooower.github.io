@@ -5,8 +5,10 @@ import classes from './Profile.module.css'
 function Profile(props) {
     return (
         <div>
-            <ProfileInfo/>
-            <MyPosts posts={props.posts}/>
+            <ProfileInfo dispatch={props.dispatch}
+                newPostText={props.state.newPostText}/>
+            <MyPosts 
+             posts={props.state.posts}/>
         </div>
     )
 }
