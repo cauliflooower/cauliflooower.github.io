@@ -1,5 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+import profileReducer from "./profile-reducer";
+import dialogReducer from "./dialog-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
     _state: {
@@ -27,6 +28,7 @@ let store = {
                 { id: 4, message: "Yo" },
                 { id: 5, message: "I'm tired" },
             ],
+            newMessageBody: '',
         }, 
     
         sidebar:{}
@@ -42,41 +44,15 @@ let store = {
         this._callSubscriber = observer
     },
 
-    // addPost(){
-    //     let newPost = {
-    //         id: 4,
-    //         message: this._state.profilePage.newPostText,
-    //         likesCount: 0,
-    //     }
-    //     this._state.profilePage.posts.push(newPost);
-    //     this._state.profilePage.newPostText = ''
-    //     this._callSubscriber();
-    // },
-    // updateNewPostText(newText){
-    //     this._state.profilePage.newPostText = newText;
-    //     this._callSubscriber();
-    // },
     dispatch(action){ // {type: 'ADD-POST'}
-        if(action.type === 'ADD-POST'){
-            let newPost = {
-                id: 4,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0,
-            }
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = ''
-            this._callSubscriber();
-        }else if(action.type === 'UPDATE-NEW-POST-TEXT'){
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber();
-        }
 
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogReducer(this._state.dialogsPage, action)
+        this._state.sidebarPage = sidebarReducer(this._state.sidebar, action)
+
+        this._callSubscriber(this._state)
     }
 }
-
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (text) => 
-    ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
 window.store = store
 export default store;

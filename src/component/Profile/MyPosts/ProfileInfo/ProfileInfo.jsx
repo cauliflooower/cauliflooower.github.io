@@ -1,19 +1,18 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/state';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/profile-reducer';
 import classes from './ProfileInfo.module.css';
 
 function ProfileInfo(props) {
     let newPostElement = React.createRef();
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
-    }
+                let onAddPost = () => {
+                    props.dispatch(addPostActionCreator());
+                }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        // let action = {type: 'UPDATE-NEW-POST-TEXT', newText: text}
-        props.dispatch(updateNewPostTextActionCreator(text))
-    }
+                let onPostChange = () => {
+                    let text = newPostElement.current.value;
+                    props.updateNewPostText(text);
+                }
 
     return (
         <div>
@@ -27,7 +26,7 @@ function ProfileInfo(props) {
                     ref={newPostElement} 
                     value={props.newPostText}
                     className={classes.windowPost} placeholder='Start writing'/>
-                    <button onClick={addPost} className={classes.customBtn + ' ' + classes.btn}>Add Post</button>
+                    <button onClick={onAddPost} className={classes.customBtn + ' ' + classes.btn}>Add Post</button>
                 </div>
             </div>
         </div>

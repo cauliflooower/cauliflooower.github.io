@@ -5,6 +5,7 @@ import Header from './component/Header/Header';
 import Navbar from './component/Navbar/Navbar';
 import Profile from './component/Profile/Profile';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import DialogsContainer from './component/Dialogs/DialogsContainer';
 
 function App(props) {
   return (
@@ -15,11 +16,10 @@ function App(props) {
           <Navbar />
           <div className='app-wrapper-content'>
             <Routes>
-              <Route path='/message' element={<Dialogs
-              state={props.state.dialogsPage}/>}/>
+              <Route path='/message' element={<DialogsContainer
+              store = {props.store}/>}/>
               <Route path='/profile' element={<Profile 
-              state={props.state.profilePage}
-              dispatch={props.dispatch}/>}/>
+              store = {props.store}/>}/>
             </Routes>
           </div>
         </div>
